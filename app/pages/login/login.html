@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar primary>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Chefname</ion-label>
+      <ion-input type="text" value="{{email}}" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button secondary block (click)="loginEmail()">
+         <ion-icon name="log-in"></ion-icon>
+        Login
+      </button>
+    <br>
+    <button clear block danger (click)="register()">
+            <ion-icon name='flame' ></ion-icon>
+            Crear cuenta
+    </button>
+    <ion-row center>
+      <ion-col>
+        <div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="signup-or-separator">
+            <h6 class="text">ó</h6>
+            <hr>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <button primary block (click)="doFacebookLogin()">
+          <ion-icon name="logo-facebook"></ion-icon>
+          Facebook
+       </button>
+
+  </div>
+
+</ion-content>

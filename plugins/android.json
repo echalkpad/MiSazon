@@ -1,0 +1,35 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.misazon687370"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.misazon687370"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.misazon687370"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.misazon687370"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.misazon687370"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.misazon687370"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "340260609653698",
+            "APP_NAME": "MiSazon",
+            "PACKAGE_NAME": "com.ionicframework.misazon687370"
+        }
+    },
+    "dependent_plugins": {}
+}
