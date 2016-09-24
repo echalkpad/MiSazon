@@ -23,7 +23,7 @@ class MyApp {
 
   constructor(public platform: Platform, private menu: MenuController) {
     var self = this;
-    this.rootPage = TabsPage;
+    this.rootPage = MirecetaPage;
 
     /*   this.initializeApp();
    
@@ -58,7 +58,8 @@ class MyApp {
 
     if (page === 'signup') {
       if (!(viewCtrl.instance instanceof RegistrarPage))
-        this.nav.push(RegistrarPage);
+        //this.nav.push(RegistrarPage);
+         this.nav.push(MirecetaPage);
     }
   }
 
