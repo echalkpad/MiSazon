@@ -9,6 +9,7 @@ import { Page2 } from './pages/page2/page2';
 import { LoginPage } from './pages/login/login';
 import { TabsPage } from './pages/tabs/tabs';
 import { RegistrarPage } from './pages/registrar/registrar';
+import { MirecetaPage } from './pages/mireceta/mireceta';
 
 @Component({
   templateUrl: 'build/app.html'
@@ -18,9 +19,9 @@ class MyApp {
 
   rootPage: any = Page1;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform,  private menu: MenuController) {
+  constructor(public platform: Platform, private menu: MenuController) {
     var self = this;
     this.rootPage = TabsPage;
 
@@ -31,14 +32,14 @@ class MyApp {
          { title: 'Page uno', component: Page1 },
          { title: 'Page dos', component: Page2 }
        ];*/
-  
+
   }
 
   ngOnInit() {
     var self = this;
     //firebase.auth().onAuthStateChanged(function (user) {
     //   if (user === null) {
-    self.nav.setRoot(LoginPage);
+    self.nav.setRoot(MirecetaPage);// inicializacion de la pagina de inicio jhon
     //  }
     // });
   }
@@ -60,7 +61,13 @@ class MyApp {
         this.nav.push(RegistrarPage);
     }
   }
+
+  isUserLoggedIn() {
+    return true;
+  }
 }
+
+
 
 ionicBootstrap(MyApp, [
   FIREBASE_PROVIDERS,
