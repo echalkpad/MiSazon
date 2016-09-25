@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild , PLATFORM_DIRECTIVES} from '@angular/core';
 import { ionicBootstrap, Platform, Nav, MenuController, ViewController, Events} from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import {FIREBASE_PROVIDERS, defaultFirebase, AngularFire, FirebaseObjectObservable} from 'angularfire2';
-
+import {CUSTOM_ICON_DIRECTIVES} from 'ionic2-custom-icons';
 
 import { Page1 } from './pages/page1/page1';
 import { Page2 } from './pages/page2/page2';
@@ -71,6 +71,10 @@ class MyApp {
 
 
 ionicBootstrap(MyApp, [
+    {
+        provide: PLATFORM_DIRECTIVES, useValue: [CUSTOM_ICON_DIRECTIVES], multi: true
+    }
+], [
   FIREBASE_PROVIDERS,
   defaultFirebase({
     apiKey: "AIzaSyCibIeMkCkW5JbKQv2voc55VvdMeLC7-5s",

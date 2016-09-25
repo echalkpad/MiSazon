@@ -1,0 +1,464 @@
+@font-face {
+  font-family: "EvilIcons";
+  src: url('../fonts/EvilIcons.eot');
+  src: url('../fonts/EvilIcons.eot?#iefix') format('eot'),
+  url('../fonts/EvilIcons.woff2') format('woff2'),
+  url('../fonts/EvilIcons.woff') format('woff'),
+  url('../fonts/EvilIcons.ttf') format('truetype'),
+  url('../fonts/EvilIcons.svg#EvilIcons') format('svg');
+}
+
+@mixin ei-styles {
+  font-family: "EvilIcons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%ei {
+  @include ei-styles;
+}
+
+@function ei-char($filename) {
+  $char: "";
+
+  @if $filename == archive {
+  $char: "\E001";
+}
+  @if $filename == arrow-down {
+  $char: "\E002";
+}
+  @if $filename == arrow-left {
+  $char: "\E003";
+}
+  @if $filename == arrow-right {
+  $char: "\E004";
+}
+  @if $filename == arrow-up {
+  $char: "\E005";
+}
+  @if $filename == bell {
+  $char: "\E006";
+}
+  @if $filename == calendar {
+  $char: "\E007";
+}
+  @if $filename == camera {
+  $char: "\E008";
+}
+  @if $filename == cart {
+  $char: "\E009";
+}
+  @if $filename == chart {
+  $char: "\E00A";
+}
+  @if $filename == check {
+  $char: "\E00B";
+}
+  @if $filename == chevron-down {
+  $char: "\E00C";
+}
+  @if $filename == chevron-left {
+  $char: "\E00D";
+}
+  @if $filename == chevron-right {
+  $char: "\E00E";
+}
+  @if $filename == chevron-up {
+  $char: "\E00F";
+}
+  @if $filename == clock {
+  $char: "\E010";
+}
+  @if $filename == close-o {
+  $char: "\E011";
+}
+  @if $filename == close {
+  $char: "\E012";
+}
+  @if $filename == comment {
+  $char: "\E013";
+}
+  @if $filename == credit-card {
+  $char: "\E014";
+}
+  @if $filename == envelope {
+  $char: "\E015";
+}
+  @if $filename == exclamation {
+  $char: "\E016";
+}
+  @if $filename == external-link {
+  $char: "\E017";
+}
+  @if $filename == eye {
+  $char: "\E018";
+}
+  @if $filename == gear {
+  $char: "\E019";
+}
+  @if $filename == heart {
+  $char: "\E01A";
+}
+  @if $filename == image {
+  $char: "\E01B";
+}
+  @if $filename == like {
+  $char: "\E01C";
+}
+  @if $filename == link {
+  $char: "\E01D";
+}
+  @if $filename == location {
+  $char: "\E01E";
+}
+  @if $filename == lock {
+  $char: "\E01F";
+}
+  @if $filename == minus {
+  $char: "\E020";
+}
+  @if $filename == navicon {
+  $char: "\E021";
+}
+  @if $filename == paperclip {
+  $char: "\E022";
+}
+  @if $filename == pencil {
+  $char: "\E023";
+}
+  @if $filename == play {
+  $char: "\E024";
+}
+  @if $filename == plus {
+  $char: "\E025";
+}
+  @if $filename == pointer {
+  $char: "\E026";
+}
+  @if $filename == question {
+  $char: "\E027";
+}
+  @if $filename == redo {
+  $char: "\E028";
+}
+  @if $filename == refresh {
+  $char: "\E029";
+}
+  @if $filename == retweet {
+  $char: "\E02A";
+}
+  @if $filename == sc-facebook {
+  $char: "\E02B";
+}
+  @if $filename == sc-github {
+  $char: "\E02C";
+}
+  @if $filename == sc-google-plus {
+  $char: "\E02D";
+}
+  @if $filename == sc-instagram {
+  $char: "\E02E";
+}
+  @if $filename == sc-linkedin {
+  $char: "\E02F";
+}
+  @if $filename == sc-odnoklassniki {
+  $char: "\E030";
+}
+  @if $filename == sc-pinterest {
+  $char: "\E031";
+}
+  @if $filename == sc-skype {
+  $char: "\E032";
+}
+  @if $filename == sc-soundcloud {
+  $char: "\E033";
+}
+  @if $filename == sc-telegram {
+  $char: "\E034";
+}
+  @if $filename == sc-tumblr {
+  $char: "\E035";
+}
+  @if $filename == sc-twitter {
+  $char: "\E036";
+}
+  @if $filename == sc-vimeo {
+  $char: "\E037";
+}
+  @if $filename == sc-vk {
+  $char: "\E038";
+}
+  @if $filename == sc-youtube {
+  $char: "\E039";
+}
+  @if $filename == search {
+  $char: "\E03A";
+}
+  @if $filename == share-apple {
+  $char: "\E03B";
+}
+  @if $filename == share-google {
+  $char: "\E03C";
+}
+  @if $filename == spinner-2 {
+  $char: "\E03D";
+}
+  @if $filename == spinner-3 {
+  $char: "\E03E";
+}
+  @if $filename == spinner {
+  $char: "\E03F";
+}
+  @if $filename == star {
+  $char: "\E040";
+}
+  @if $filename == tag {
+  $char: "\E041";
+}
+  @if $filename == trash {
+  $char: "\E042";
+}
+  @if $filename == trophy {
+  $char: "\E043";
+}
+  @if $filename == undo {
+  $char: "\E044";
+}
+  @if $filename == unlock {
+  $char: "\E045";
+}
+  @if $filename == user {
+  $char: "\E046";
+}
+
+@return $char;
+}
+
+@mixin ei($filename, $insert: before, $extend: true) {
+&:#{$insert} {
+  @if $extend {
+    @extend %ei;
+  } @else {
+    @include ei-styles;
+  }
+  content: ei-char($filename);
+}
+}
+
+.ei-archive {
+  @include ei(archive);
+}
+.ei-arrow-down {
+  @include ei(arrow-down);
+}
+.ei-arrow-left {
+  @include ei(arrow-left);
+}
+.ei-arrow-right {
+  @include ei(arrow-right);
+}
+.ei-arrow-up {
+  @include ei(arrow-up);
+}
+.ei-bell {
+  @include ei(bell);
+}
+.ei-calendar {
+  @include ei(calendar);
+}
+.ei-camera {
+  @include ei(camera);
+}
+.ei-cart {
+  @include ei(cart);
+}
+.ei-chart {
+  @include ei(chart);
+}
+.ei-check {
+  @include ei(check);
+}
+.ei-chevron-down {
+  @include ei(chevron-down);
+}
+.ei-chevron-left {
+  @include ei(chevron-left);
+}
+.ei-chevron-right {
+  @include ei(chevron-right);
+}
+.ei-chevron-up {
+  @include ei(chevron-up);
+}
+.ei-clock {
+  @include ei(clock);
+}
+.ei-close-o {
+  @include ei(close-o);
+}
+.ei-close {
+  @include ei(close);
+}
+.ei-comment {
+  @include ei(comment);
+}
+.ei-credit-card {
+  @include ei(credit-card);
+}
+.ei-envelope {
+  @include ei(envelope);
+}
+.ei-exclamation {
+  @include ei(exclamation);
+}
+.ei-external-link {
+  @include ei(external-link);
+}
+.ei-eye {
+  @include ei(eye);
+}
+.ei-gear {
+  @include ei(gear);
+}
+.ei-heart {
+  @include ei(heart);
+}
+.ei-image {
+  @include ei(image);
+}
+.ei-like {
+  @include ei(like);
+}
+.ei-link {
+  @include ei(link);
+}
+.ei-location {
+  @include ei(location);
+}
+.ei-lock {
+  @include ei(lock);
+}
+.ei-minus {
+  @include ei(minus);
+}
+.ei-navicon {
+  @include ei(navicon);
+}
+.ei-paperclip {
+  @include ei(paperclip);
+}
+.ei-pencil {
+  @include ei(pencil);
+}
+.ei-play {
+  @include ei(play);
+}
+.ei-plus {
+  @include ei(plus);
+}
+.ei-pointer {
+  @include ei(pointer);
+}
+.ei-question {
+  @include ei(question);
+}
+.ei-redo {
+  @include ei(redo);
+}
+.ei-refresh {
+  @include ei(refresh);
+}
+.ei-retweet {
+  @include ei(retweet);
+}
+.ei-sc-facebook {
+  @include ei(sc-facebook);
+}
+.ei-sc-github {
+  @include ei(sc-github);
+}
+.ei-sc-google-plus {
+  @include ei(sc-google-plus);
+}
+.ei-sc-instagram {
+  @include ei(sc-instagram);
+}
+.ei-sc-linkedin {
+  @include ei(sc-linkedin);
+}
+.ei-sc-odnoklassniki {
+  @include ei(sc-odnoklassniki);
+}
+.ei-sc-pinterest {
+  @include ei(sc-pinterest);
+}
+.ei-sc-skype {
+  @include ei(sc-skype);
+}
+.ei-sc-soundcloud {
+  @include ei(sc-soundcloud);
+}
+.ei-sc-telegram {
+  @include ei(sc-telegram);
+}
+.ei-sc-tumblr {
+  @include ei(sc-tumblr);
+}
+.ei-sc-twitter {
+  @include ei(sc-twitter);
+}
+.ei-sc-vimeo {
+  @include ei(sc-vimeo);
+}
+.ei-sc-vk {
+  @include ei(sc-vk);
+}
+.ei-sc-youtube {
+  @include ei(sc-youtube);
+}
+.ei-search {
+  @include ei(search);
+}
+.ei-share-apple {
+  @include ei(share-apple);
+}
+.ei-share-google {
+  @include ei(share-google);
+}
+.ei-spinner-2 {
+  @include ei(spinner-2);
+}
+.ei-spinner-3 {
+  @include ei(spinner-3);
+}
+.ei-spinner {
+  @include ei(spinner);
+}
+.ei-star {
+  @include ei(star);
+}
+.ei-tag {
+  @include ei(tag);
+}
+.ei-trash {
+  @include ei(trash);
+}
+.ei-trophy {
+  @include ei(trophy);
+}
+.ei-undo {
+  @include ei(undo);
+}
+.ei-unlock {
+  @include ei(unlock);
+}
+.ei-user {
+  @include ei(user);
+}

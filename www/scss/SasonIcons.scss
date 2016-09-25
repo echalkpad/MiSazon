@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "SasonIcons";
+  src: url('../fonts/SasonIcons.eot');
+  src: url('../fonts/SasonIcons.eot?#iefix') format('eot'),
+  url('../fonts/SasonIcons.woff2') format('woff2'),
+  url('../fonts/SasonIcons.woff') format('woff'),
+  url('../fonts/SasonIcons.ttf') format('truetype'),
+  url('../fonts/SasonIcons.svg#SasonIcons') format('svg');
+}
+
+@mixin ag-styles {
+  font-family: "SasonIcons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%ag {
+  @include ag-styles;
+}
+
+@function ag-char($filename) {
+  $char: "";
+
+  @if $filename == chef {
+  $char: "\E001";
+}
+  @if $filename == gusta {
+  $char: "\E002";
+}
+
+@return $char;
+}
+
+@mixin ag($filename, $insert: before, $extend: true) {
+&:#{$insert} {
+  @if $extend {
+    @extend %ag;
+  } @else {
+    @include ag-styles;
+  }
+  content: ag-char($filename);
+}
+}
+
+.ag-chef {
+  @include ag(chef);
+}
+.ag-gusta {
+  @include ag(gusta);
+}
