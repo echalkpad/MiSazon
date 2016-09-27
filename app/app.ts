@@ -1,8 +1,8 @@
-import { Component, ViewChild , PLATFORM_DIRECTIVES} from '@angular/core';
+import { Component, ViewChild, PLATFORM_DIRECTIVES} from '@angular/core';
 import { ionicBootstrap, Platform, Nav, MenuController, ViewController, Events} from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import {FIREBASE_PROVIDERS, defaultFirebase, AngularFire, FirebaseObjectObservable} from 'angularfire2';
-import {CUSTOM_ICON_DIRECTIVES} from 'ionic2-custom-icons';
+import * as firebase from 'firebase'
 
 import { Page1 } from './pages/page1/page1';
 import { Page2 } from './pages/page2/page2';
@@ -17,13 +17,13 @@ import { MirecetaPage } from './pages/mireceta/mireceta';
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Page1;
+  rootPage: any = LoginPage;
 
   pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, private menu: MenuController) {
     var self = this;
-    this.rootPage = MirecetaPage;
+    self.rootPage = LoginPage;
 
     /*   this.initializeApp();
    
@@ -35,22 +35,15 @@ class MyApp {
 
   }
 
-  ngOnInit() {
+  /*ngOnInit() {
     var self = this;
-    //firebase.auth().onAuthStateChanged(function (user) {
-    //   if (user === null) {
-    self.nav.setRoot(MirecetaPage);// inicializacion de la pagina de inicio jhon
-    //  }
-    // });
+    firebase.auth().onAuthStateChanged(function (user) {
+       if (user === null) {
+    self.nav.setRoot(LoginPage);// inicializacion de la pagina de inicio jhon
+      }
+     });
   }
-  initializeApp() {
-    this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-    });
-  }
-
+*/
   openPage(page) {
     let viewCtrl: ViewController = this.nav.getActive();
     // close the menu when clicking a link from the menu
@@ -58,23 +51,26 @@ class MyApp {
 
     if (page === 'signup') {
       if (!(viewCtrl.instance instanceof RegistrarPage))
-        //this.nav.push(RegistrarPage);
-         this.nav.push(MirecetaPage);
+        this.nav.push(RegistrarPage);
     }
   }
 
   isUserLoggedIn() {
     return true;
   }
+
+  signout() {
+    var self = this;
+    firebase.auth().signOut().then(function () {
+      self.menu.close();
+      self.nav.setRoot(LoginPage);
+    }, function (error) {
+      console.log(error);
+    });
+  }
 }
 
-
-
 ionicBootstrap(MyApp, [
-    {
-        provide: PLATFORM_DIRECTIVES, useValue: [CUSTOM_ICON_DIRECTIVES], multi: true
-    }
-], [
   FIREBASE_PROVIDERS,
   defaultFirebase({
     apiKey: "AIzaSyCibIeMkCkW5JbKQv2voc55VvdMeLC7-5s",

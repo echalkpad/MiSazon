@@ -1,0 +1,66 @@
+<ion-item text-wrap>
+  <ion-card>
+    <ion-item style="background-color: #B8D4F0; !important;">
+      <ion-avatar item-left>
+        <img src="{{thread.chef.img}}">
+      </ion-avatar>
+      <h2>{{thread.chef.chefname}}</h2>
+      <p>{{thread.fecha}}</p>
+    </ion-item>
+
+    <img src="{{thread.imagen}}">
+
+    <ion-card-content>
+      <p>{{thread.descripcion}}</p>
+    </ion-card-content>
+
+
+    <ion-row>
+
+      <ion-col width-20 center text-left>
+        <button primary clear small>
+          <custom-icon set="ag" name="fork-and-knife-like" style="color:#006DF0;"></custom-icon>
+          <div style="color:#222222;">{{thread.votesUp}} </div>        
+        </button>
+      </ion-col>
+
+      <ion-col width-20 center text-right>
+        <button primary clear small>
+          <custom-icon set="ag" name="knife-and-fork-bad" style="color:#D80027;"></custom-icon>
+          <div style="color:#222222;">{{thread.votesDown}} </div>        
+        </button>
+      </ion-col>      
+      <ion-col width-60 center text-right>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="background-color: #B8D4F0; !important;">
+      <ion-col  width-20>
+        <button primary clear small>
+          <custom-icon set="ag" name="fork-and-knife-like"></custom-icon>
+        </button>
+      </ion-col>
+      <ion-col  width-20>
+        <button primary clear small>
+          <custom-icon set="ag" name="knife-and-fork-bad"></custom-icon>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button primary clear>
+          <ion-icon name="ios-text"></ion-icon>
+        </button>
+      </ion-col>
+
+     <ion-col>
+        <button primary clear>
+           <ion-icon name="md-ribbon"></ion-icon>
+        </button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card>

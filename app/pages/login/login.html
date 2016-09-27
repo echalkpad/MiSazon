@@ -7,15 +7,16 @@
 </ion-header>
 
 <ion-content padding>
+ 
   <ion-list>
     <ion-item>
       <ion-label floating>Chefname</ion-label>
-      <ion-input type="text" value="{{email}}" [(ngModel)]="email"></ion-input>
+      <ion-input type="text" value="{{email}}" [(ngModel)]="email" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
+      <ion-input type="password" value="{{password}}" [(ngModel)]="password"></ion-input>
     </ion-item>
 
   </ion-list>
@@ -34,9 +35,7 @@
       <ion-col>
         <div>
           <br>
-          <br>
-          <br>
-          <br>
+          <br>  
           <div class="signup-or-separator">
             <h6 class="text">ó</h6>
             <hr>

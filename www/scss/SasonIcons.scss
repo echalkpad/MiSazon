@@ -27,11 +27,38 @@
 @function ag-char($filename) {
   $char: "";
 
-  @if $filename == chef {
+  @if $filename == badge {
   $char: "\E001";
 }
-  @if $filename == gusta {
+  @if $filename == chef {
   $char: "\E002";
+}
+  @if $filename == chef1 {
+  $char: "\E003";
+}
+  @if $filename == cooker {
+  $char: "\E004";
+}
+  @if $filename == fork-and-knife-like {
+  $char: "\E005";
+}
+  @if $filename == fork-and-knife-restaurant {
+  $char: "\E006";
+}
+  @if $filename == gusta {
+  $char: "\E007";
+}
+  @if $filename == knife-and-fork-bad {
+  $char: "\E008";
+}
+  @if $filename == knife-fork-like {
+  $char: "\E009";
+}
+  @if $filename == medal {
+  $char: "\E00A";
+}
+  @if $filename == restaurant-app {
+  $char: "\E00B";
 }
 
 @return $char;
@@ -48,9 +75,36 @@
 }
 }
 
+.ag-badge {
+  @include ag(badge);
+}
 .ag-chef {
   @include ag(chef);
 }
+.ag-chef1 {
+  @include ag(chef1);
+}
+.ag-cooker {
+  @include ag(cooker);
+}
+.ag-fork-and-knife-like {
+  @include ag(fork-and-knife-like);
+}
+.ag-fork-and-knife-restaurant {
+  @include ag(fork-and-knife-restaurant);
+}
 .ag-gusta {
   @include ag(gusta);
+}
+.ag-knife-and-fork-bad {
+  @include ag(knife-and-fork-bad);
+}
+.ag-knife-fork-like {
+  @include ag(knife-fork-like);
+}
+.ag-medal {
+  @include ag(medal);
+}
+.ag-restaurant-app {
+  @include ag(restaurant-app);
 }
