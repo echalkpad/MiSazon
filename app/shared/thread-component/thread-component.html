@@ -1,20 +1,19 @@
 <ion-item text-wrap>
   <ion-card>
-    <ion-item style="background-color: #B8D4F0; !important;">
+    <ion-item style="background-color: #E8EBEF; !important;">
       <ion-avatar item-left>
         <img src="{{thread.chef.img}}">
       </ion-avatar>
       <h2>{{thread.chef.chefname}}</h2>
       <p>{{thread.fecha}}</p>
     </ion-item>
+    <div  (click)="verReceta($event);">
+      <img src="{{thread.imagen}}" id="{{thread.key}}">
 
-    <img src="{{thread.imagen}}">
-
-    <ion-card-content>
-      <p>{{thread.descripcion}}</p>
-    </ion-card-content>
-
-
+      <ion-card-content >
+        <p id="{{thread.key}}">{{thread.descripcion}}</p>
+      </ion-card-content>
+    </div>
     <ion-row>
 
       <ion-col width-20 center text-left>
@@ -29,38 +28,39 @@
           <custom-icon set="ag" name="knife-and-fork-bad" style="color:#D80027;"></custom-icon>
           <div style="color:#222222;">{{thread.votesDown}} </div>        
         </button>
-      </ion-col>      
+      </ion-col>
       <ion-col width-60 center text-right>
         <ion-note>
-          11h ago
+          235 comentarios {{thread.key}}
         </ion-note>
       </ion-col>
     </ion-row>
 
-    <ion-row style="background-color: #B8D4F0; !important;">
-      <ion-col  width-20>
-        <button primary clear small>
-          <custom-icon set="ag" name="fork-and-knife-like"></custom-icon>
+    <ion-row style="background-color: #E8EBEF; !important;">
+      <ion-col>
+        <button primary clear small full>
+          <custom-icon set="ag" name="fork-and-knife-like" style="color:#222222;"></custom-icon>
         </button>
       </ion-col>
-      <ion-col  width-20>
-        <button primary clear small>
-          <custom-icon set="ag" name="knife-and-fork-bad"></custom-icon>
+      <ion-col>
+        <button primary clear small full>
+          <custom-icon set="ag" name="knife-and-fork-bad" style="color:#222222;"></custom-icon>
         </button>
       </ion-col>
 
       <ion-col>
-        <button primary clear>
-          <ion-icon name="ios-text"></ion-icon>
+        <button primary clear full>
+          <ion-icon name="ios-text" style="color:#222222;"></ion-icon>
         </button>
       </ion-col>
 
-     <ion-col>
-        <button primary clear>
-           <ion-icon name="md-ribbon"></ion-icon>
+      <ion-col>
+        <button primary clear full>
+           <ion-icon name="md-ribbon" style="color:#222222;"></ion-icon>
         </button>
       </ion-col>
 
     </ion-row>
 
   </ion-card>
+</ion-item>

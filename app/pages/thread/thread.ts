@@ -20,6 +20,7 @@ export class ThreadPage {
   private start: number;
   private pageSize: number = 3;
   private internetConnected: boolean = true;
+  private loading: boolean = false;
 
   public threads: Array<IReceta> = [];
   constructor(private navCtrl: NavController, private mappingsService: MappingsService,
@@ -69,6 +70,7 @@ export class ThreadPage {
     this.queryText = '';
     if (this.internetConnected) {
       this.loadThreads(true);
+      
       refresher.complete();
     } else {
       refresher.complete();

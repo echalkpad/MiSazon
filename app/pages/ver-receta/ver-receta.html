@@ -1,0 +1,74 @@
+<!--
+ Autor: Alex Giancarlo Camacho Zegarra
+ Fecha: 28/09/2016 17:28
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>verReceta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngFor="let item of recetas | async">
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="{{item.chef.img}}">
+      </ion-avatar>
+      <h2>{{item.chef.chefname}}</h2>
+      <p>{{item.fecha}}</p>
+    </ion-item>
+
+    <img src="{{item.imagen}}">
+    <h1 class="text-aligh: center;">{{item.titulo}}</h1>
+    <ion-card-content>
+
+
+
+      <ion-slides pager>
+
+        <ion-slide >
+          <h1>Ingredientes</h1>
+          <p>{{item.ingredientes}}</p>
+        </ion-slide>
+
+        <ion-slide >
+          <h2>Slide 2</h2>
+          <p>{{item.instrucciones}}</p>
+        </ion-slide>
+
+        <ion-slide >
+          <h2>Slide 3</h2>
+        </ion-slide>
+
+      </ion-slides>
+
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button primary clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+      </ion-col>
+      <ion-col>
+        <button primary clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 Comments</div>
+      </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+</ion-content>

@@ -1,8 +1,9 @@
 import { Component, Input, Output } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {CUSTOM_ICON_DIRECTIVES} from 'ionic2-custom-icons';
 
 import { IReceta } from '../interfaces';
+import { VerRecetaPage } from '../../pages/ver-receta/ver-receta';
 
 @Component({
   selector: 'forum-thread',
@@ -11,7 +12,7 @@ import { IReceta } from '../interfaces';
 })
 export class ThreadComponent {
   @Input() thread: IReceta;
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController,public params: NavParams) {
 
   }
   ngOnInit() {
@@ -35,6 +36,12 @@ export class ThreadComponent {
 
   viewComments(key: string) {
     //this.onViewComments.emit(key);
+  }
+
+  verReceta(key: any) {
+    var self = this;
+    console.log(key);
+    this.navCtrl.push(VerRecetaPage,{key:key.target.id});
   }
 
 }

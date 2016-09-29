@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar no-border-bottom>
-  
+
     <button menuToggle>
         <ion-icon name='menu'></ion-icon>
     </button>
@@ -17,21 +17,27 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-refresher (ionRefresh)="reloadThreads($event)" *ngIf="segment=='all'">
-    <ion-refresher-content></ion-refresher-content>
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
   </ion-refresher>
 
   <div *ngIf="loading">
-    <img src="https://chsakell.files.wordpress.com/2016/08/ionic2-angular2-firebase-23.gif" style="display:block; margin:auto" />
+    <img src="https://d13yacurqjgara.cloudfront.net/users/295041/screenshots/1288716/1.gif" style="display:block; margin:auto"
+    />
   </div>
 
-  <ion-list *ngIf="!loading">
-    <forum-thread *ngFor="let thread of threads" [thread]="thread" ></forum-thread>
+  <ion-list style=" margin-left:-20px;margin-right:-20px;padding: 0;height: 100%; " *ngIf="!loading">
+    <forum-thread *ngFor="let thread of threads" [thread]="thread"></forum-thread>
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="fetchNextThreads($event)" threshold="10px" *ngIf="(start > 0) && (queryText.trim().length == 0) && segment=='all' && internetConnected">
-    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    <ion-infinite-scroll-content ></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
 </ion-content>
