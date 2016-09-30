@@ -27,7 +27,7 @@ export class ThreadComponent {
 
   // Notice function declarion to keep the right this reference
   public onCommentAdded = (childSnapshot, prevChildKey) => {
-    console.log(childSnapshot.val());
+
     var self = this;
     // Attention: only number of comments is supposed to changed.
     // Otherwise you should run some checks..
@@ -40,7 +40,6 @@ export class ThreadComponent {
 
   verReceta(key: any) {
     var self = this;
-    console.log(key);
     this.navCtrl.push(VerRecetaPage,{key:key.target.id});
   }
 

@@ -5,13 +5,13 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>verReceta</ion-title>
+    <ion-title>{{titulo}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content style="margin-left:-15x;margin-right:-15px;padding: 0;height: 100%; ">
 
   <ion-card *ngFor="let item of recetas | async">
 
@@ -24,24 +24,25 @@
     </ion-item>
 
     <img src="{{item.imagen}}">
-    <h1 class="text-aligh: center;">{{item.titulo}}</h1>
+
     <ion-card-content>
 
-
-
       <ion-slides pager>
-
-        <ion-slide >
+        <ion-slide>
           <h1>Ingredientes</h1>
-          <p>{{item.ingredientes}}</p>
+         
+          <ion-list>
+            <ion-item *ngFor="let key of item.ingredientes | keys">
+              <p>{{key.key}} : {{key.value}} </p>
+            </ion-item>
+          </ion-list>
         </ion-slide>
-
-        <ion-slide >
-          <h2>Slide 2</h2>
+        <ion-slide>
+          <h2>Manos a la obra</h2>
           <p>{{item.instrucciones}}</p>
         </ion-slide>
 
-        <ion-slide >
+        <ion-slide>
           <h2>Slide 3</h2>
         </ion-slide>
 

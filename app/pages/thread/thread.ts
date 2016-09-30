@@ -57,7 +57,7 @@ export class ThreadPage {
       firebase.database().ref('receta').orderByPriority().once('value', function (snapshot) {
 
         self.itemsService.reversedItems<IReceta>(self.mappingsService.getThreads(snapshot)).forEach(function (thread) {
-          console.log(thread)
+
           self.threads.push(thread);
         });
         self.start -= (self.pageSize + 1);

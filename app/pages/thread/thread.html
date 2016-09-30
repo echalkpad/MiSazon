@@ -32,7 +32,7 @@
     />
   </div>
 
-  <ion-list style=" margin-left:-20px;margin-right:-20px;padding: 0;height: 100%; " *ngIf="!loading">
+  <ion-list style="margin-left:-20px;margin-right:-20px;padding: 0;height: 100%; " *ngIf="!loading">
     <forum-thread *ngFor="let thread of threads" [thread]="thread"></forum-thread>
   </ion-list>
 
